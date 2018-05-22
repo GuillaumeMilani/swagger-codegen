@@ -11,6 +11,11 @@ import java.io.FileInputStream;
 {{#useBeanValidation}}
 import javax.validation.constraints.*;
 {{/useBeanValidation}}
+{{#supportAsync}}
+
+import java.util.concurrent.CompletionStage;
+import java.util.concurrent.CompletableFuture;
+{{/supportAsync}}
 {{>generatedAnnotation}}
 {{#operations}}
 public class {{classname}}ControllerImp {{#useInterfaces}}implements {{classname}}ControllerImpInterface{{/useInterfaces}} {
