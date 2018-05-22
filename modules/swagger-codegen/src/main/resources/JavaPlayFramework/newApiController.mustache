@@ -205,7 +205,7 @@ public class {{classname}}Controller extends Controller {
         return CompletableFuture.supplyAsync(() -> {
         {{/supportAsync}}
         {{/returnType}}
-        {{#returnType}}{{#supportAsync}}CompletionStage<{{>returnTypesNoVoid}}> stage = {{/supportAsync}}{{^supportAsync}}{{>returnTypesNoVoid}} obj = {{/supportAsync}}{{/returnType}}{{^returnType}}{{#supportAsync}}    {{/supportAsync}}{{/returnType}}imp.{{operationId}}({{#allParams}}{{paramName}}{{#hasMore}}, {{/hasMore}}{{/allParams}}){{#returnType}}{{#supportAsync}}.thenApply(obj -> { {{/supportAsync}}{{/returnType}}{{^supportAsync}};{{/supportAsync}}
+        {{#returnType}}{{#supportAsync}}CompletionStage<{{>returnTypesNoVoid}}> stage = {{/supportAsync}}{{^supportAsync}}{{>returnTypesNoVoid}} obj = {{/supportAsync}}{{/returnType}}{{^returnType}}{{#supportAsync}}    {{/supportAsync}}{{/returnType}}imp.{{operationId}}({{#allParams}}{{paramName}}{{#hasMore}}, {{/hasMore}}{{/allParams}}){{^returnType}};{{/returnType}}{{#returnType}}{{#supportAsync}}.thenApply(obj -> { {{/supportAsync}}{{/returnType}}{{^supportAsync}};{{/supportAsync}}
         {{#returnType}}
         {{^isResponseFile}}
         {{^returnTypeIsPrimitive}}
